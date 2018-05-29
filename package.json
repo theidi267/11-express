@@ -1,0 +1,25 @@
+{
+  "name": "11-express",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) 11: Single Resource Express API ======",
+  "main": ".index.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --verbose --watchAll --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theidi267/11-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theidi267/11-express/issues"
+  },
+  "homepage": "https://github.com/theidi267/11-express#readme",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "jest": "^23.0.1"
+  }
+}
