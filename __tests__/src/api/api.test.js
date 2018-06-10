@@ -15,7 +15,7 @@ describe('API', () => {
   });
 
   it('gets a 200 response on a good model', () => {
-    return superagent.get('http://localhost:8888/api/v1/bar')
+    return superagent.get('http://localhost:3000/api/v1/cats')
       .then(response => {
         expect(response.statusCode).toEqual(200);
       })
@@ -23,7 +23,7 @@ describe('API', () => {
   });
 
   it('gets a 500 response on an invalid model', () => {
-    return superagent.get('http://localhost:8888/api/v1/foobar')
+    return superagent.get('http://localhost:3000/api/v1/foobar')
       .then(console.log)
       .catch(response => {
         expect(response.status).toEqual(500);
