@@ -2,8 +2,7 @@
 import fs from 'fs';
 
 const storage = {};
-
-const dataDirectory = `${__dirname}/../../../data`;
+const dataDirectory = `${__dirname}/../../data`;
 
 let readFilePromise = function(filename) {
   return new Promise(function(resolve, reject) {
