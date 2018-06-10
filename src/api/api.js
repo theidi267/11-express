@@ -3,16 +3,9 @@
 import express from 'express';
 const router = express.Router();
 
-// Read and require every file in the "models" directory
-// This allows us to dynamically create and use models with ONE API.
 import requireAll from 'require-dir';
 const models = requireAll('../models');
 
-/**
- * Simple method to send a JSON response (all of the API methods will use this)
- * @param res
- * @param data
- */
 let sendJSON = (res,data) => {
   res.statusCode = 200;
   res.statusMessage = 'OK';
@@ -21,11 +14,6 @@ let sendJSON = (res,data) => {
   res.end();
 };
 
-/**
- * Send a formatted (JSON) error the user in case of catastrophe
- * @param res
- * @param err
- */
 let serverError = (res,err) => {
   let error = { error:err };
   res.statusCode = 500;
@@ -35,14 +23,6 @@ let serverError = (res,err) => {
   res.end();
 };
 
-/**
- * Dynamically find and set the right model, based on the URL Param
- *    i.e.  /api/vi/people/12345 would result in the model being "people"
- *          assuming there is a valid "people.js" file in the models folder
- * @param req
- * @param res
- * @returns {*}
- */
 let getModel = (req,res) => {
   try {
     if ( req.params.model && models[req.params.model] ) {
@@ -82,7 +62,7 @@ router.post('/api/v1/:model', (req,res) => {
 
 });
 
-router.param('model', (req,res,next,value) => {
+router.param('model', (req,res,next,value) => { //eslint-disable-line
   req.model = getModel(req,res);
   next();
 });
