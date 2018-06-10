@@ -24,14 +24,13 @@ class Note{
     return storage.get(id);
   }
 
-  static updateOne(criteria) {
+  static updateOne(criteria) { //eslint-disable-line
     return storage.update(this);
   }
 
   static deleteOne(id) {
     return storage.delete(id);
   }
-
 }
 
 export default Note;

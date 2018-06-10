@@ -2,8 +2,10 @@
   "name": "11-express",
   "version": "1.0.0",
   "description": "![cf](https://i.imgur.com/7v5ASc8.png) 11: Single Resource Express API ======",
-  "main": ".index.js",
+  "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js",
     "lint": "eslint **/*.js",
     "test": "jest --verbose --coverage",
     "test-watch": "jest --verbose --watchAll --coverage"
@@ -20,6 +22,12 @@
   "homepage": "https://github.com/theidi267/11-express#readme",
   "dependencies": {
     "eslint": "^4.19.1",
-    "jest": "^23.0.1"
+    "jest": "^23.0.1",
+    "babel-env": "^2.4.1",
+    "babel-eslint": "^8.2.3",
+    "babel-register": "^6.26.0",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "require-dir": "^1.0.0"
   }
 }
